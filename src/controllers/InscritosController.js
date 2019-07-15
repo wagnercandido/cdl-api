@@ -1,28 +1,28 @@
 const Inscrito = require('../models/Inscritos');
 
 class InscritoController {
-    async getInscritos(req, res) {
+    async get(req, res) {
         const inscritos = await Inscrito.find().sort('-createdAt');
         return res.json(inscritos);
     }
 
     async store(req, res) {
-        const { nome, idade, email,
-            telefone, restricao, comunidade,
-            funcao, motivo_participacao, rua,
-            numero, cep, bairro, cidade, estado } = req.body;
+        const { nome, idade, telefone,
+            restricao, comunidade,
+            funcao, motivo, rua,
+            numero, bairro, cidade, estado } = req.body;
 
         const inscrito = await Inscrito.create({
-            nome, idade, email,
-            telefone, restricao, comunidade,
-            funcao, motivo_participacao, rua,
-            numero, cep, bairro, cidade, estado
+            nome, idade, telefone,
+            restricao, comunidade,
+            funcao, motivo, rua,
+            numero, bairro, cidade, estado
         });
 
         return res.json(inscrito);
     }
 
-    async showInscrito(req, res) {
+    async getInscritoById(req, res) {
         const inscrito = await Inscrito.findById(req.params.id);
         return res.json(inscrito);
     }

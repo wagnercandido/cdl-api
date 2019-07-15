@@ -4,16 +4,14 @@ const Inscrito = new mongoose.Schema(
     {
         nome: {
             type: String,
-            required
+            required: true
         },
         idade: {
             type: Number
         },
-        email: {
-            type: String
-        },
         telefone: {
-            type: String
+            type: String,
+            required: true
         },
         restricao: {
             type: String
@@ -24,7 +22,7 @@ const Inscrito = new mongoose.Schema(
         funcao: {
             type: String
         },
-        motivo_participacao: {
+        motivo: {
             type: String
         },
 
@@ -32,9 +30,6 @@ const Inscrito = new mongoose.Schema(
             type: String
         },
         numero: {
-            type: String
-        },
-        cep: {
             type: String
         },
         bairro: {
