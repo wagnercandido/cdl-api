@@ -41,6 +41,12 @@ const Inscrito = new mongoose.Schema(
         estado: {
             type: String
         },
+        pagamento: {
+            type: String
+        },
+        confirmado: {
+            type: Boolean
+        }
     }, {
         timestamps: true
     }
