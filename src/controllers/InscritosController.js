@@ -7,16 +7,14 @@ class InscritoController {
     }
 
     async store(req, res) {
-        const { nome, idade, telefone,
-            restricao, comunidade,
-            funcao, motivo, rua,
-            numero, bairro, cidade, estado } = req.body;
+        const { nome, idade, telefone, email,
+            rua, numero, bairro, cidade, estado,
+            restricao, comunidade, funcao, motivo, pagamento
+        } = req.body;
 
-        const inscrito = await Inscrito.create({
-            nome, idade, telefone,
-            restricao, comunidade,
-            funcao, motivo, rua,
-            numero, bairro, cidade, estado
+        const inscrito = await Inscrito.create({ nome, idade, telefone, email,
+            rua, numero, bairro, cidade, estado,
+            restricao, comunidade, funcao, motivo, pagamento
         });
 
         return res.json(inscrito);
