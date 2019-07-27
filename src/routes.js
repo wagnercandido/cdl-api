@@ -15,6 +15,6 @@ routes.get('/inscrito/:id',InscritoController.getInscritoById);
 routes.put('/inscrito/confirmacao/:id',InscritoController.confirmarInscricao);
 
 routes.post('/usuario',UsuarioController.store);
-routes.put('/login',UsuarioController.getUser);
+routes.post('/login',UsuarioController.getUser);
 
 module.exports = routes;

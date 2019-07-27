@@ -3,9 +3,10 @@ const Usuario = require('../models/Usuario');
 class UsuarioController {
     async store(req, res) {
         const { usuario, senha, nome } = req.body;
+        console.log('requisicao', req.body);
 
-        const usuario = await Usuario.create({ usuario, senha, nome });
-        return res.json(usuario);
+        const cadastro = await Usuario.create({ usuario, senha, nome });
+        return res.json(cadastro);
     }
 
     async getUser(req, res) {
